@@ -1,14 +1,18 @@
 {
-  "name": "vite_react_shadcn_ts",
+  "name": "clear-identity",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "description": "Privacy-preserving digital identity management platform using FHE encryption",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "compile": "hardhat compile",
+    "test": "hardhat test",
+    "deploy": "hardhat run scripts/deploy.ts --network sepolia"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
@@ -40,7 +44,10 @@
     "@radix-ui/react-toggle-group": "^1.1.10",
     "@radix-ui/react-tooltip": "^1.2.7",
     "@tanstack/react-query": "^5.83.0",
-    "@web3modal/wagmi": "^5.1.11",
+    "@rainbow-me/rainbowkit": "^2.2.8",
+    "@wagmi/core": "^2.9.0",
+    "@fhevm/solidity": "^0.7.0",
+    "@openzeppelin/contracts": "^5.0.1",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "cmdk": "^1.1.1",
@@ -60,8 +67,8 @@
     "tailwind-merge": "^2.6.0",
     "tailwindcss-animate": "^1.0.7",
     "vaul": "^0.9.9",
-    "viem": "^2.37.6",
-    "wagmi": "^2.16.9",
+    "viem": "^2.33.0",
+    "wagmi": "^2.9.0",
     "zod": "^3.25.76"
   },
   "devDependencies": {
@@ -76,11 +83,14 @@
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.20",
     "globals": "^15.15.0",
-    "lovable-tagger": "^1.1.9",
     "postcss": "^8.5.6",
     "tailwindcss": "^3.4.17",
     "typescript": "^5.8.3",
     "typescript-eslint": "^8.38.0",
-    "vite": "^5.4.19"
+    "vite": "^5.4.19",
+    "hardhat": "^2.19.4",
+    "@nomicfoundation/hardhat-toolbox": "^4.0.0",
+    "@nomicfoundation/hardhat-verify": "^2.0.0",
+    "dotenv": "^16.3.1"
   }
 }
