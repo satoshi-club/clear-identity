@@ -1,9 +1,12 @@
 import { WalletConnect } from '@/components/WalletConnect';
 import { DigitalIdCard } from '@/components/DigitalIdCard';
 import { FeatureCard } from '@/components/FeatureCard';
+import { GetStartedFlow } from '@/components/GetStartedFlow';
+import { LearnMoreDialog } from '@/components/LearnMoreDialog';
 import { Button } from '@/components/ui/button';
 import { Shield, Lock, Eye, Zap, Globe, Users } from 'lucide-react';
 import heroImage from '@/assets/hero-bg.jpg';
+import fheLogo from '@/assets/fhe-logo.png';
 
 const Index = () => {
   return (
@@ -11,8 +14,8 @@ const Index = () => {
       {/* Header */}
       <header className="border-b border-border bg-background/80 backdrop-blur-md sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <Shield className="w-8 h-8 text-primary" />
+          <div className="flex items-center gap-3">
+            <img src={fheLogo} alt="FHE Identity" className="w-10 h-10" />
             <span className="text-xl font-bold holographic-text">FHE Identity</span>
           </div>
           <WalletConnect />
@@ -39,12 +42,16 @@ const Index = () => {
               Encryption ensures your KYC information remains private while being verifiable on-chain.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button className="holographic text-black font-semibold hover:scale-105 transition-transform">
-                Get Started
-              </Button>
-              <Button variant="outline" className="hover:scale-105 transition-transform">
-                Learn More
-              </Button>
+              <GetStartedFlow>
+                <Button className="holographic text-black font-semibold hover:scale-105 transition-transform">
+                  Get Started
+                </Button>
+              </GetStartedFlow>
+              <LearnMoreDialog>
+                <Button variant="outline" className="hover:scale-105 transition-transform">
+                  Learn More
+                </Button>
+              </LearnMoreDialog>
             </div>
           </div>
         </div>
@@ -138,8 +145,8 @@ const Index = () => {
       <footer className="border-t border-border bg-secondary/20 py-12">
         <div className="container mx-auto px-4">
           <div className="text-center space-y-4">
-            <div className="flex items-center justify-center gap-2">
-              <Shield className="w-6 h-6 text-primary" />
+            <div className="flex items-center justify-center gap-3">
+              <img src={fheLogo} alt="FHE Identity" className="w-8 h-8" />
               <span className="text-lg font-bold holographic-text">FHE Identity</span>
             </div>
             <p className="text-muted-foreground">
