@@ -1,7 +1,7 @@
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 import { Card } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Lock, Eye, Shield, Zap, Globe, Users } from 'lucide-react';
+import { Lock, Eye, Key, Zap, Globe, Users } from 'lucide-react';
 
 interface LearnMoreDialogProps {
   children: React.ReactNode;
@@ -36,7 +36,7 @@ export function LearnMoreDialog({ children }: LearnMoreDialogProps) {
               <div className="grid md:grid-cols-2 gap-4">
                 <div className="space-y-3">
                   <div className="flex items-center gap-3">
-                    <Shield className="w-5 h-5 text-primary" />
+                    <Key className="w-5 h-5 text-primary" />
                     <span>Complete privacy protection</span>
                   </div>
                   <div className="flex items-center gap-3">

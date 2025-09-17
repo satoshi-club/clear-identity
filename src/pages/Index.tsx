@@ -6,7 +6,7 @@ import { LearnMoreDialog } from '@/components/LearnMoreDialog';
 import { ContractInteraction } from '@/components/ContractInteraction';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Lock, Eye, Zap, Globe, Users, Key, Database } from 'lucide-react';
+import { Lock, Eye, Zap, Globe, Users, Key, Database, User } from 'lucide-react';
 import heroImage from '@/assets/hero-bg.jpg';
 import fheLogo from '@/assets/fhe-logo.png';
 
