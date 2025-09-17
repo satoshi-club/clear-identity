@@ -3,8 +3,10 @@ import { DigitalIdCard } from '@/components/DigitalIdCard';
 import { FeatureCard } from '@/components/FeatureCard';
 import { GetStartedFlow } from '@/components/GetStartedFlow';
 import { LearnMoreDialog } from '@/components/LearnMoreDialog';
+import { ContractInteraction } from '@/components/ContractInteraction';
 import { Button } from '@/components/ui/button';
-import { Shield, Lock, Eye, Zap, Globe, Users } from 'lucide-react';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { Lock, Eye, Zap, Globe, Users, Key, Database } from 'lucide-react';
 import heroImage from '@/assets/hero-bg.jpg';
 import fheLogo from '@/assets/fhe-logo.png';
 
@@ -81,7 +83,7 @@ const Index = () => {
                   <span>Zero-knowledge verification</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <Shield className="w-5 h-5 text-primary" />
+                  <Key className="w-5 h-5 text-primary" />
                   <span>Compliance without exposure</span>
                 </div>
               </div>
@@ -128,7 +130,7 @@ const Index = () => {
               description="Built for scale with enterprise-grade security features and compliance with global regulations."
             />
             <FeatureCard
-              icon={Shield}
+              icon={Database}
               title="Zero-Knowledge Proofs"
               description="Prove statements about your data without revealing the underlying information."
             />
@@ -138,6 +140,63 @@ const Index = () => {
               description="Your data never leaves your control. Verification happens without data exposure."
             />
           </div>
+        </div>
+      </section>
+
+      {/* Contract Interaction Section */}
+      <section className="py-20 bg-secondary/10">
+        <div className="container mx-auto px-4">
+          <div className="text-center space-y-6 mb-16">
+            <h2 className="text-3xl lg:text-4xl font-bold">
+              Interact with <span className="holographic-text">Smart Contracts</span>
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Create and manage your encrypted identity directly on-chain using our FHE-enabled smart contracts
+            </p>
+          </div>
+          
+          <Tabs defaultValue="overview" className="w-full">
+            <TabsList className="grid w-full grid-cols-2">
+              <TabsTrigger value="overview">Overview</TabsTrigger>
+              <TabsTrigger value="interact">Contract Interaction</TabsTrigger>
+            </TabsList>
+            <TabsContent value="overview" className="space-y-6">
+              <div className="grid md:grid-cols-3 gap-6">
+                <div className="text-center space-y-4">
+                  <div className="w-16 h-16 mx-auto bg-primary/10 rounded-full flex items-center justify-center">
+                    <User className="w-8 h-8 text-primary" />
+                  </div>
+                  <h3 className="text-xl font-semibold">Create Profile</h3>
+                  <p className="text-muted-foreground">
+                    Initialize your encrypted identity profile with FHE-protected data
+                  </p>
+                </div>
+                <div className="text-center space-y-4">
+                  <div className="w-16 h-16 mx-auto bg-primary/10 rounded-full flex items-center justify-center">
+                    <Key className="w-8 h-8 text-primary" />
+                  </div>
+                  <h3 className="text-xl font-semibold">Add Attributes</h3>
+                  <p className="text-muted-foreground">
+                    Securely store encrypted identity attributes and credentials
+                  </p>
+                </div>
+                <div className="text-center space-y-4">
+                  <div className="w-16 h-16 mx-auto bg-primary/10 rounded-full flex items-center justify-center">
+                    <Eye className="w-8 h-8 text-primary" />
+                  </div>
+                  <h3 className="text-xl font-semibold">Request Verification</h3>
+                  <p className="text-muted-foreground">
+                    Request verification of your attributes from authorized verifiers
+                  </p>
+                </div>
+              </div>
+            </TabsContent>
+            <TabsContent value="interact">
+              <ContractInteraction 
+                contractAddress={import.meta.env.VITE_CONTRACT_ADDRESS}
+              />
+            </TabsContent>
+          </Tabs>
         </div>
       </section>
 
